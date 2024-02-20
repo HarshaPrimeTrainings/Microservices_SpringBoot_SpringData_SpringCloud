@@ -2,31 +2,30 @@ package com.training.userservice.dao;
 
 public class User {
 
-	private int userId;
-	private String userName;
+	private int userid;
+	private String username;
 	private String addr;
 	private String email;
 	
-	public User(int userId, String userName, String addr, String email) {
-		super();
-		this.userId = userId;
-		this.userName = userName;
+	public User(int userid, String username, String addr, String email) {
+		this.userid = userid;
+		this.username = username;
 		this.addr = addr;
 		this.email = email;
 	}
 	
 	
 	public int getUserId() {
-		return userId;
+		return userid;
 	}
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setUserId(int userid) {
+		this.userid = userid;
 	}
 	public String getUserName() {
-		return userName;
+		return username;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUserName(String username) {
+		this.username = username;
 	}
 	public String getAddr() {
 		return addr;
