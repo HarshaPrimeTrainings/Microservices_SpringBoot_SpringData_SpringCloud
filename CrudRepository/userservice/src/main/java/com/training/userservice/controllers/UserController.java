@@ -43,10 +43,35 @@ public class UserController {
 		return new ResponseEntity<User>(service.getUserById(uid),HttpStatus.OK);
 	}
 	
+	@GetMapping("/userbyname/{username}")
+	public ResponseEntity<User> getUserByName(@PathVariable String username){
+		return new ResponseEntity<User>(service.getUserByname(username),HttpStatus.OK);
+	}
+	
+	@GetMapping("/users/{addr}")
+	public ResponseEntity<List<User>> getUsersByadd(@PathVariable String addr){
+		return new ResponseEntity<List<User>>(service.getUsersBYadd(addr),HttpStatus.OK);
+	}
+	
+	
+	@GetMapping("/userbyemail/{email}")
+	public ResponseEntity<User> getuseremail(@PathVariable String email){
+		return new ResponseEntity<User>(service.getuseremail(email),HttpStatus.OK);
+	}
+	
+	@GetMapping("/username/{addr}")
+	public ResponseEntity<List<String>> getUsernamesByaddr(@PathVariable String addr){
+		return new ResponseEntity<List<String>>(service.getUsernamesByaddr(addr),HttpStatus.OK);
+	}
+	
+	
 	@PostMapping(value = "/save")
 	public ResponseEntity<User> saveUser(@RequestBody User user) {
 		return new ResponseEntity<User>(service.addUser(user),HttpStatus.CREATED);
 	}
+	
+	
+	
 	
 	@PutMapping("/update/{userid}")
 	public ResponseEntity<User> updateEntireUser(@PathVariable int userid,@RequestBody User user) {

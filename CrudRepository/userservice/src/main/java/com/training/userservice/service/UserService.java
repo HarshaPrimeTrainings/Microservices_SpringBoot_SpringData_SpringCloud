@@ -29,6 +29,23 @@ public class UserService {
 		 return dao.findById(userid).orElseThrow(()->new UserNotFoundException("User Not Found"));
 	}
 	
+	public User getUserByname(String username) {
+		return dao.findByusername(username);
+	}
+	
+	public User getuseremail(String email) {
+		return dao.getuseremail(email);
+	}
+	
+	public List<String> getUsernamesByaddr(String addr){
+		return dao.getUsernamesByaddr(addr);
+	}
+	
+	public List<User> getUsersBYadd(String addr){
+		return dao.getByAddr(addr);
+	}
+	
+	
 	public boolean isUserPresent(int userId) {
 			return  dao.existsById(userId);
 	}
