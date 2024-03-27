@@ -1,0 +1,54 @@
+<head>
+<style>
+body {
+	background-color: #2e9df5;
+}
+
+#login-wrapper {
+	background-color: white;
+	width: 35%;
+	margin: 30px auto;
+	text-align: center;
+	padding: 30 0 30 0;
+}
+
+input {
+	height: 30px;
+	box-sizing: border-box;
+	display: block;
+	outline: none;
+	width: 100%
+}
+
+#loginform {
+	padding: 0 50px;
+}
+
+input[type=submit] {
+	background-color: #2196f3;
+	border: none;
+	font-size: 20px;
+	color: white;
+	cursor: pointer;
+}
+</style>
+
+</head>
+<center>
+
+	<div id="login-wrapper">
+		<h1>Custom Login Form</h1>
+		<div th:if="${param.error}" style="color: red">Login Failed</div>
+		<div th:if="${param.logout}" style="color:  #2196f3;">Logout Success</div>
+		<form th:action="@{/login}" method="post" id="loginform">
+			<p>
+				USERNAME : <input type="text" name="username">
+			</p>
+			<p>
+				PASSWORD : <input type="password" name="password">
+			</p>
+			<input type="submit" value="SIGN-IN">
+		</form>
+	</div>
+
+</center>
